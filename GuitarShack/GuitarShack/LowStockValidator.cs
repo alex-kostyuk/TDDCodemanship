@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GuitarShack
+﻿namespace GuitarShack
 {
     public class LowStockValidator
     {
@@ -19,6 +17,17 @@ namespace GuitarShack
         {
             var stockLevel = productInfo.GetStockLevel(productId);
             var restockLevel = restockLevelCalculator.GetRestockLevel(productId);
+
+            // Examle:
+            // 30 in storage
+            // 25 in stock
+            // 1 quantity in order
+            // 24 - actual stock
+            // 7 restockLevel 
+            // 6 + 7 == 13 places in storage 
+            // 10 - minimal order 
+            // if (13 <  10) then send message  
+
             var stockLevelIsLow = stockLevel - quantity <= restockLevel;
             if (stockLevelIsLow)
             {
