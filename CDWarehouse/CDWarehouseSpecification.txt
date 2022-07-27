@@ -1,0 +1,72 @@
+-Search
+    input: keywords 
+    find artist and titles that match the keywords
+     - Title
+     - Artist 
+    Examples:
+        List Of Cds:
+            Artist:   Title:
+            "AC/DC" - "Back in Black"
+            "AC/DC" - "The razors edge"
+            "Metallica" - "The Black Album"
+        keywords:"AC/DC Black"
+        output:
+            "AC/DC" - "Back in Black"
+-Buy
+    Item
+        - Artist
+        - Title
+        - StockLevel: int
+        - Price
+    Quantity
+
+    Examples:
+
+        input:
+            Atrist: "AC/DC"
+            Title: "Back in Black"
+            Price: "20.00"
+            StockLevel: 15
+            quantity: 2
+
+        after action:
+            StockLevel: 13
+
+- Add To Stock
+    betore:
+        List Of Cds:
+            Artist:   Title:                StockLevel
+            "AC/DC" - "Back in Black"           5
+
+     input:
+        Atrist: "AC/DC"
+        Title: "Back in Black"
+        Quantity: 10
+
+    betore:
+        List Of Cds:
+            Artist:   Title:                StockLevel
+            "AC/DC" - "Back in Black"           15
+    
+- Leave a review:
+        berore:
+            Artist:   Title:           Rating
+            "AC/DC" - "Back in Black"    3
+            ratings:
+                rating   ReviewText
+                 1      "Dont' like it =("
+                 5      "Noting special"
+
+        Atrist: "AC/DC"
+        Title: "Back in Black"
+        Rating (1-10 stars): 9  
+        ReviewText (free text): "I really like it!"
+
+        after:
+            Artist:   Title:          Rating
+            "AC/DC" - "Back in Black"   5
+            ratings:
+                rating   ReviewText
+                 1      "Dont' like it =("
+                 5      "Noting special"
+                 9      "I really like it!"
