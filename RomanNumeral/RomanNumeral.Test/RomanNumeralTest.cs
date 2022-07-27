@@ -1,11 +1,9 @@
 using NUnit.Framework;
-using System;
 
 namespace RomanNumeral.Test
 {
-    public class Tests
+    public class RomanNumeralTest
     {
-
         [Test]
         [TestCase(4, "IV")]
         [TestCase(6, "VI")]
